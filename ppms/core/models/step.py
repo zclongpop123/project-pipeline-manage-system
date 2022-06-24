@@ -12,6 +12,9 @@ class Step(models.Model):
         db_table = 'core_steps'
 
     name = models.CharField(max_length=30)
+    
+    code = models.CharField(max_length=30)
+    
     description = models.CharField(max_length=100, null=True)
 
     def __str__(self):

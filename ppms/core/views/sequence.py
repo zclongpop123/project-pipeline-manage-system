@@ -1,16 +1,14 @@
 #========================================
 #    author: Changlong.Zang
 #      mail: zclongpop123@163.com
-#      time: Fri Jun 24 23:01:47 2022
+#      time: Fri Jun 24 18:56:07 2022
 #========================================
-from core.models import Project
-from rest_framework import serializers
+from rest_framework import viewsets
+from core.models import Sequence
+from core.serializers import SequenceSerializer
 #--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-class ProjectSerializer(serializers.ModelSerializer):
+class SequenceViewSet(viewsets.ModelViewSet):
     '''
     '''
-    class Meta:
-        '''
-        '''
-        model = Project
-        fields = '__all__'
+    queryset = Sequence.objects.all()
+    serializer_class = SequenceSerializer
